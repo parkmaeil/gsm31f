@@ -1,0 +1,13 @@
+PS D:\gsm31\frontend> Set-ExecutionPolicy Unrestricted -Scope CurrentUser
+PS D:\gsm31\frontend> node -v
+v22.14.0
+PS D:\gsm31\frontend> npm -v
+10.9.2
+PS D:\gsm31\frontend> npx -v
+10.9.2
+PS D:\gsm31\frontend> npx create-react-app my-app
+
+PS D:\gsm31\frontend>cd my-app
+PS D:\gsm31\frontend\my-app>npm start
+
+구동..........
