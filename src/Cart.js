@@ -10,7 +10,7 @@ function Cart() {
   }, [username]);
 
   const fetchCustomerCart = (username) => {
-    fetch(`http://localhost:8081/api/customer/carts/${username}`)
+    fetch(`http://localhost:8081/api/cus/carts/${username}`)
       .then((res) => {
         if (!res.ok) throw new Error('네트워크 응답 오류');
         return res.json();
