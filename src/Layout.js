@@ -1,18 +1,19 @@
 // src/Layout.js
 import React, { useContext } from 'react';
 import { AppBar, Toolbar, Typography, Button, Box } from '@mui/material';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { AuthContext } from './AuthContext';
 
 export default function Layout({ children }) {
-  const { user, logout } = useContext(AuthContext);
-  const navigate = useNavigate();
+  const { user } = useContext(AuthContext);
+
+ /* const navigate = useNavigate();
 
   const onLogout = () => {
     logout();
     navigate('/');
-  };
-
+  }; */
+  
   return (
     <>
       {/* 헤더 */}
@@ -30,15 +31,16 @@ export default function Layout({ children }) {
           {user ? (
             <>
               <Typography sx={{ mr: 2 }}>{user.email}님</Typography>
-              
+             
               {/* user.roles 배열에 ROLE_ADMIN 이 포함되어 있으면 버튼을 렌더링 */}
               {user.roles.includes("ROLE_ADMIN") && (
                 <Button color="inherit" component={Link} to="/admin">
-                  관리자페이지
+                  관리자 페이지
                 </Button>
               )}
               
-              <Button color="inherit" onClick={onLogout}>
+              {/* 로그아웃은 /logout 으로만 이동 */}
+              <Button color="inherit" component={Link} to="/logout">
                 로그아웃
               </Button>
             </>
